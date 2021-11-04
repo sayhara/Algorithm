@@ -29,7 +29,6 @@ public class BJ_1260 {
         V=Integer.parseInt(st.nextToken()); // 시작 정점
         arr=new int[N+1][N+1];
 
-
         for(int i=0;i<M;i++){
             st=new StringTokenizer(br.readLine());
             int u=Integer.parseInt(st.nextToken());
