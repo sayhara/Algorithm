@@ -21,7 +21,6 @@ public class BJ_1931 {
     static int N;
     static int arr[][];
     static boolean visited[][];
-    static int max = Integer.MIN_VALUE;
 
     public static void main(String[] args) throws IOException {
 
