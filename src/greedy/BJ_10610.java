@@ -6,6 +6,11 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Collections;
 
+/*
+30으로 나눠 떨어지기 위해서는 각 자리수의 합이 3으로 나눠 떨어져야 하고 동시에
+마지막 자리수가 0이여야 한다.
+이중 가장 큰 값이 나와야 하므로 내림차순 정렬을 통하여 값을 구한다.
+ */
 public class BJ_10610 {
 
     public static void main(String[] args) throws IOException {
