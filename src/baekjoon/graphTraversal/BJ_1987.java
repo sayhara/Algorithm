@@ -6,11 +6,9 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 /*
-백트래킹 기법을 이용해야 하는 문제로 계속 문제가 되었던 부분은
-인접한 네 칸을 탐색한 후에 해당 방문 자리를 다시 초기화 시켜줘야 된다는 것이다.
-그렇게 해야만 새롭게 DFS()를 통해 탐색을 하게 되더라도
-인접한 부분을 방문할 수 있기 때문이다.
-즉, visited[]=true; DFS(); visited[]=false의 방법을 이용해야 한다.
+BFS를 이용할 때는 동시에 입력이 되므로
+방문여부를 체크하기가 까다롭다.
+DFS를 이용하자.
  */
 
 public class BJ_1987 {
