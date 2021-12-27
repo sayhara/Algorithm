@@ -2,42 +2,52 @@ package programmers;
 
 import java.util.*;
 
+/*
+정수형 / 정수형 = 정수형
+ex) 4/3 -> 1
+ */
+
 public class 기능개발 {
 
     public static void main(String[] args) {
+
         Solution solution=new Solution();
-        int a[]={93,30,55};
-        int b[]={1,30,5};
-        System.out.println(Arrays.toString(solution.solution(a,b)));
+        int[] progresses={96,94};
+        int[] speeds={3,3};
+        System.out.println(Arrays.toString(solution.solution(progresses,speeds)));
 
     }
 
     static class Solution {
         public int[] solution(int[] progresses, int[] speeds) {
+
             Queue<Integer> q=new LinkedList<>();
-            for(int i=0;i<progresses.length;i++){
-                q.add((int)Math.ceil((100-progresses[i])/speeds[i]));
-            }
             ArrayList<Integer> list=new ArrayList<>();
 
-            int prev=q.poll();
-            int count=1;
+            for(int i=0;i<progresses.length;i++){
+                q.add((int) Math.ceil((double) (100-progresses[i])/speeds[i])); // 마무리 가능한 기간
+            }
 
+            int pre=q.poll();
+            int count=1;
             while (!q.isEmpty()){
                 int cur=q.poll();
-                if(prev>=cur){
+                if(pre>=cur){
                     count++;
-                } else{
+                } else {
                     list.add(count);
-                    count=1;
-                    prev=cur;
+                    count = 1;
+                    pre=cur;
                 }
             }
             list.add(count);
-            int answer[]=new int[list.size()];
-            for(int i=0;i< list.size();i++){
+
+            int[] answer = new int[list.size()];
+
+            for(int i=0;i<list.size();i++){
                 answer[i]=list.get(i);
             }
+
             return answer;
         }
     }
