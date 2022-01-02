@@ -1,5 +1,11 @@
 package programmers;
 
+/*
+A와 같은 단어가 없다면 원래대로라면
+오른쪽으로만 이동시켜야 하므로 name.length()-1이지만,
+A의 단어가 있음으로써 왼쪽으로 이동하는 경우가 생김
+ */
+
 public class 조이스틱 {
 
     public static void main(String[] args) {
