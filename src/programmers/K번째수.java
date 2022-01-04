@@ -1,6 +1,7 @@
 package programmers;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class K번째수 {
@@ -11,7 +12,7 @@ public class K번째수 {
         int[] array={1,5,2,6,3,7,4};
         int[][] commands={{2, 5, 3}, {4, 4, 1}, {1, 7, 3}};
 
-        solution.solution(array,commands);
+        System.out.println(Arrays.toString(solution.solution(array,commands)));
 
     }
 
