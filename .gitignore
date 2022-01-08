@@ -1,2 +1,6 @@
 # Project exclude paths
 /out/
+
+## File ignore
+/src/review/
+remind
