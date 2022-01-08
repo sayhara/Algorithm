@@ -66,8 +66,5 @@ public class 키패드_누르기 {
             return answer;
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> origin/master
+
