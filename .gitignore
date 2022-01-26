@@ -2,5 +2,7 @@
 /out/
 
 ## File ignore
+
 /src/review/
+/src/test/
 remind
