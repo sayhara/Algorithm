@@ -45,7 +45,10 @@ public class BJ_1717 {
 
         x=find(x);
         y=find(y);
-        if(x!=y) parent[y]=x; // 일반적으로 부모를 합칠때는 작을 쪽으로 합침
+        if(x!=y){
+            if(x<y) parent[y]=x; // 부모를 합칠때는 작을 쪽으로 합침
+            else parent[x]=y;
+        }
     }
 
     public static int find(int child){
