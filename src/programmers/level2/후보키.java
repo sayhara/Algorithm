@@ -4,48 +4,48 @@ import java.util.*;
 
 public class 후보키 {
 
-    class Solution {
+    static class Solution {
 
-        List<String> candidate=new ArrayList<>();
+        static List<String> candidate=new ArrayList<>();
 
         public int solution(String[][] relation) {
             int answer = 0;
 
-            for(int i=0;i<relation[0].length;i++){
+            for(int i=1;i<=relation[0].length;i++){
                 boolean visited[]=new boolean[relation[0].length];
-                dfs(visited,0,0,i+1,relation);
+                combination(relation,visited,relation[0].length,0,i);
             }
             answer=candidate.size();
 
             return answer;
         }
 
-        public void dfs(boolean[] visited, int start, int depth, int r, String[][] relation){
+        public static void combination(String[][] relation, boolean[] visited, int n, int depth, int r){
 
             if(r==0){
                 List<Integer> list=new ArrayList<>();
                 String key="";
-                for(int i=0;i<visited.length;i++){
+                for(int i=0;i<n;i++){
                     if(visited[i]){
                         key+=String.valueOf(i);
                         list.add(i);
                     }
                 }
-
-                Map<String, Integer> map = new HashMap<>();
+                // 유일성
+                HashMap<String, Integer> map=new HashMap<>();
 
                 for(int i=0;i<relation.length;i++){
                     String s="";
                     for(Integer j:list){
                         s+=relation[i][j];
                     }
-                    if (map.containsKey(s)) {
+                    if(map.containsKey(s)){ // 중복되면 유일성 x
                         return;
                     } else {
-                        map.put(s, 0);
+                        map.put(s,0);
                     }
                 }
-
+                // 최소성
                 for(String s:candidate){
                     int count=0;
                     for(int i=0;i<key.length();i++){
@@ -53,15 +53,17 @@ public class 후보키 {
                         if(s.contains(sub)) count++;
                     }
                     if(count==s.length()) return;
+
                 }
                 candidate.add(key);
                 return;
+
             }
 
-            for(int i=start;i<visited.length;i++){
+            for(int i=depth;i<n;i++){
                 if(visited[i]==false){
                     visited[i]=true;
-                    dfs(visited,i,depth+1,r-1,relation);
+                    combination(relation,visited,n,i+1,r-1);
                     visited[i]=false;
                 }
             }
