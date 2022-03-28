@@ -6,8 +6,8 @@ public class 수식_최대화 {
 
     static class Solution {
 
-        static ArrayList<Long> numList;
-        static ArrayList<Character> opList;
+        static ArrayList<Long> numList=new ArrayList<>();
+        static ArrayList<Character> opList=new ArrayList<>();
         static char arr[]={'*','+','-'};
         static boolean visited[]=new boolean[arr.length];
         static char op[]=new char[arr.length];
@@ -15,8 +15,6 @@ public class 수식_최대화 {
 
         public long solution(String expression) {
 
-            numList=new ArrayList<>();
-            opList=new ArrayList<>();
             String st="";
 
             for(int i=0;i<expression.length();i++){
@@ -56,24 +54,29 @@ public class 수식_최대화 {
 
         public static void solve(){
 
-            for(int i=0;i<op.length;i++){
-                for(int j=0;j<opList.size();j++){
+            ArrayList<Long> num=new ArrayList<>();
+            num.addAll(numList);
+            ArrayList<Character> oper=new ArrayList<>();
+            oper.addAll(opList);
 
-                    if(op[i]==opList.get(j)){
-                        long num1=numList.get(j);
-                        long num2=numList.get(j+1);
+            for(int i=0;i<op.length;i++){
+                for(int j=0;j<oper.size();j++){
+
+                    if(op[i]==oper.get(j)){
+                        long num1=num.get(j);
+                        long num2=num.get(j+1);
                         long result=cal(op[i],num1,num2);
 
-                        numList.remove(j+1); // 뒤에있는 값부터 삭제
-                        numList.remove(j);
-                        opList.remove(j);
+                        num.remove(j+1); // 뒤에있는 값부터 삭제
+                        num.remove(j);
+                        oper.remove(j);
 
-                        numList.add(j,result);
+                        num.add(j,result);
                         j--;
                     }
                 }
-                answer=Math.max(answer,Math.abs(numList.get(0)));
             }
+            answer=Math.max(answer,Math.abs(num.get(0)));
 
         }
 

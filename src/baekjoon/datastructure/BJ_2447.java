@@ -1,8 +1,10 @@
-package baekjoon.div_conquer;
+package baekjoon.datastructure;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+
+// 분할 정복
 
 public class BJ_2447 {
 

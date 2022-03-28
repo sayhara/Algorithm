@@ -1,6 +1,8 @@
-package baekjoon.dp;
+package baekjoon.datastructure;
 
 import java.io.*;
+
+// DP
 
 public class BJ_1003 {
 

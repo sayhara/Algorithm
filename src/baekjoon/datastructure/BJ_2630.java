@@ -1,9 +1,11 @@
-package baekjoon.div_conquer;
+package baekjoon.datastructure;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
+
+// 분할 정복
 
 public class BJ_2630 {
 
