@@ -25,7 +25,7 @@ public class BJ_15661 {
             }
         }
 
-        for(int i=1;i<=N;i++){
+        for(int i=1;i<N;i++){
             div(0,i);
         }
         System.out.println(min);
