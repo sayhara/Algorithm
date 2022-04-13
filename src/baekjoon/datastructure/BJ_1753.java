@@ -1,22 +1,7 @@
-package baekjoon.Implementation;
+package baekjoon.datastructure;
 
 import java.io.*;
 import java.util.*;
-
-class Node implements Comparable<Node>{
-    int end, weight;
-
-    public Node(int end, int weight){
-        this.end=end;
-        this.weight=weight;
-    }
-
-    public int compareTo(Node o){
-        return weight-o.weight; // 오름차순
-    }
-
-
-}
 
 public class BJ_1753 {
 
@@ -84,6 +69,19 @@ public class BJ_1753 {
                     pq.add(new Node(node.end, Dist[node.end]));
                 }
             }
+        }
+    }
+
+    public static class Node implements Comparable<Node> {
+        int end, weight;
+
+        public Node(int end, int weight) {
+            this.end = end;
+            this.weight = weight;
+        }
+
+        public int compareTo(Node o) {
+            return weight - o.weight; // 오름차순
         }
     }
 }
